@@ -61,6 +61,8 @@ response:
 
 
 ==================
+http://162.55.220.72:5005/object_info_1?name=Max&age=22&weight=81
+==================
 
 EP_4
 Method: GET
@@ -82,6 +84,8 @@ response:
           }
 
 
+==================
+http://162.55.220.72:5005/object_info_2?name=Max&age=22&salary=1000
 ==================
 
 EP_5
