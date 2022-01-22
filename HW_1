@@ -110,6 +110,8 @@ response:
 
 
 ==================
+http://162.55.220.72:5005/object_info_3?name=Max&age=22&salary=1000
+==================
 
 EP_6
 Method: GET
@@ -125,6 +127,8 @@ response:
           'salary': [salary, str(salary * 2), str(salary * 3)]}
 
 
+==================
+http://162.55.220.72:5005/object_info_4?name=Max&age=22&salary=1000
 ==================
 
 EP_7
@@ -145,3 +149,7 @@ response:
                      'u_age': age,
                      'u_salary_5_years': salary * 4.2}
           }
+          
+==================
+http://162.55.220.72:5005/user_info_2
+==================
