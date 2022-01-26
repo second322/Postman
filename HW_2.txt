@@ -152,26 +152,66 @@ var reqBody = pm.request.url.query.toObject();
 console.log('request!: ', reqBody)
 
 // 5. Проверить, что name в ответе равно name s request (name забрать из request.)
+pm.test("Check name", function () {
+    pm.expect(jsonData.name).to.eql(reqBody.name);
+});
 
 // 6. Проверить, что age в ответе равно age из request (age забрать из request.)
+pm.test("Check age", function () {
+    pm.expect(jsonData.age).to.eql(Number(reqBody.age));
+});
 
 // 7. Вывести в консоль параметр salary из request.
+console.log(reqBody.salary)
 
 // 8. Вывести в консоль параметр salary из response.
+console.log(jsonData.salary)
 
 // 9. Вывести в консоль 0-й элемент параметра salary из response.
-
-// 10. Вывести в консоль 1-й элемент параметра salary параметр salary из response.
-// 11. Вывести в консоль 2-й элемент параметра salary параметр salary из response.
+ console.log(jsonData.salary[0])
+// // 10. Вывести в консоль 1-й элемент параметра salary параметр salary из response.
+ console.log(jsonData.salary[1])
+// // 11. Вывести в консоль 2-й элемент параметра salary параметр salary из response.
+ console.log(jsonData.salary[2])
 // 12. Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request.)
+pm.test("Check salary[0]", function () {
+    
+    pm.expect(jsonData.salary[0]).to.eql(Number(reqBody.salary));
+});
+
 // 13. Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request.)
+pm.test("Check salary[1]", function () {
+    
+    pm.expect(Number(jsonData.salary[1])).to.eql(2*reqBody.salary);
+});
+
 // 14. Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request.)
+pm.test("Check salary[2]", function () {
+    
+    pm.expect(Number(jsonData.salary[2])).to.eql(3*reqBody.salary);
+});
+
 // 15. Создать в окружении переменную name
+//environment -> + -> name
+
 // 16. Создать в окружении переменную age
+//environment -> + -> age
+
 // 17. Создать в окружении переменную salary
+//environment -> + -> salary
+
 // 18. Передать в окружение переменную name
+pm.environment.set("name", jsonData.name);
+
 // 19. Передать в окружение переменную age
+pm.environment.set("age", jsonData.age);
+
 // 20. Передать в окружение переменную salary
+pm.environment.set("salary", jsonData.salary);
+
 // 21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.
 
+for(var i = 0;i < jsonData.salary.length;i++){
 
+    console.log(jsonData.salary[i])
+}
